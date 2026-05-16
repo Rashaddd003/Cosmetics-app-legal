@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <title>BeautyLook — Support & Legal</title>
+  <meta name="description"
+    content="Support, Privacy Policy, and Terms of Use for BeautyLook — your AI-powered skincare companion." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet" />
+  <style>
+    /* ── Reset ── */
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* ── Tokens (Mirroring the Skin Companion App) ── */
+    :root {
+      --bg: #F8F5F3;
+      --surface: #FFFFFF;
+      --ink: #2E2430;
+      --muted: #6F6272;
+      --brand: #A06A92;
+      --brand-light: #EBDDE7;
+      --accent: #B85F6B;
+      --accent-light: #F5E2E8;
+      --border: #E8DFE6;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── Navigation ── */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(248, 245, 243, 0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-inner {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+      font-size: 18px;
+      font-weight: 900;
+      letter-spacing: 2px;
+      color: var(--brand);
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 24px;
+    }
+
+    .nav-links a {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--muted);
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--brand);
+    }
+
+    /* ── Hero ── */
+    .hero {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 80px 24px 48px;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 42px;
+      font-weight: 900;
+      letter-spacing: 2px;
+      color: var(--brand);
+      margin-bottom: 12px;
+      text-transform: uppercase;
+    }
+
+    .hero .tagline {
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    /* ── Container ── */
+    .container {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 24px 80px;
+    }
+
+    /* ── Section Cards ── */
+    .section {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 40px 36px;
+      margin-bottom: 32px;
+      box-shadow: 0 4px 12px rgba(94, 66, 88, 0.05);
+    }
+
+    .section-label {
+      display: inline-block;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--brand);
+      background: var(--brand-light);
+      padding: 4px 12px;
+      border-radius: 999px;
+      margin-bottom: 20px;
+    }
+
+    .section h2 {
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 16px;
+    }
+
+    .section h3 {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--ink);
+      margin-top: 28px;
+      margin-bottom: 10px;
+    }
+
+    .section p,
+    .section li {
+      font-size: 15px;
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+    .section ul {
+      padding-left: 20px;
+      margin: 8px 0 16px;
+    }
+
+    .section li {
+      margin-bottom: 6px;
+    }
+
+    /* ── Support Button ── */
+    .support-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--brand);
+      color: #fff;
+      font-size: 15px;
+      font-weight: 600;
+      padding: 14px 32px;
+      border-radius: 12px;
+      text-decoration: none;
+      transition: opacity 0.2s, transform 0.15s;
+      margin-top: 16px;
+    }
+
+    .support-btn:hover {
+      opacity: 0.9;
+      transform: translateY(-1px);
+    }
+
+    .support-email {
+      margin-top: 16px;
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .support-email a {
+      color: var(--brand);
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    /* ── Callout Box ── */
+    .callout {
+      background: var(--accent-light);
+      border-left: 3px solid var(--accent);
+      border-radius: 0 12px 12px 0;
+      padding: 16px 20px;
+      margin: 20px 0;
+    }
+
+    .callout p {
+      color: var(--accent);
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    /* ── Effective Date ── */
+    .effective-date {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--muted);
+      margin-bottom: 24px;
+    }
+
+    /* ── Welcome Section Custom ── */
+    #welcome {
+      padding: 60px 36px;
+      text-align: center;
+    }
+
+    .success-icon {
+      font-size: 48px;
+      margin-bottom: 20px;
+    }
+
+    /* ── Footer ── */
+    .footer {
+      text-align: center;
+      padding: 32px 24px;
+      border-top: 1px solid var(--border);
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .footer span {
+      font-weight: 600;
+      color: var(--brand);
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 600px) {
+      .hero h1 {
+        font-size: 32px;
+        letter-spacing: 2px;
+      }
+
+      .section {
+        padding: 28px 20px;
+      }
+
+      .nav-links {
+        gap: 16px;
+      }
+
+      .nav-links a {
+        font-size: 11px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav" id="main-nav">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">Skin Companion</a>
+      <div class="nav-links">
+        <a href="#support">Support</a>
+        <a href="#terms">Terms</a>
+        <a href="#privacy">Privacy</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header class="hero" id="main-hero">
+    <h1>BeautyLook</h1>
+    <p class="tagline">Your AI Skincare Expert</p>
+  </header>
+
+  <div class="container">
+
+    <!-- 🌟 WELCOME / VERIFICATION SECTION -->
+    <section class="section" id="welcome" style="display: none;">
+      <div class="success-icon">✨</div>
+      <span class="section-label">Verification Successful</span>
+      <h2>Welcome to BeautyLook</h2>
+      <p style="margin-bottom: 12px;">Your email has been verified. You're now ready to start your personalized skincare journey.</p>
+
+      <a href="beautylook://" class="support-btn">
+        Open App &rarr;
+      </a>
+
+      <p style="margin-top: 24px; font-size: 13px; opacity: 0.8;">
+        <strong>Using a computer?</strong><br>
+        Please open the app on your phone to finish your setup.
+      </p>
+    </section>
+
+    <!-- SUPPORT -->
+    <section class="section" id="support">
+      <span class="section-label">Support</span>
+      <h2>How can we help?</h2>
+      <p>
+        If you have questions, feedback, or need help with your skincare assessments,
+        we are here for you. Please reach out using the form below and we will
+        get back to you within 48 hours.
+      </p>
+
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSeebVX5TFmtvP9-4Y9JpRuKpC-GcRi5d5U28ox32ba1tznKvQ/viewform"
+        class="support-btn" target="_blank" rel="noopener">
+        Open Support Form &rarr;
+      </a>
+
+      <p class="support-email">
+        Or email us directly at
+        <a href="mailto:plaxperthosting@gmail.com">plaxperthosting@gmail.com</a>
+      </p>
+    </section>
+
+    <!-- TERMS OF USE -->
+    <section class="section" id="terms">
+      <span class="section-label">Legal</span>
+      <h2>Terms of Use</h2>
+      <p class="effective-date">Effective Date: May 16, 2026</p>
+
+      <p>
+        Welcome to BeautyLook. By downloading, accessing, or using the BeautyLook mobile
+        application ("App"), you agree to be bound by these Terms of Use
+        ("Terms"). If you do not agree, please do not use the App.
+      </p>
+
+      <h3>1. Description of Service</h3>
+      <p>
+        BeautyLook is an AI-powered skincare assessment tool that provides
+        personalized skin analysis, product recommendations, and routine tracking. The App uses advanced 
+        artificial intelligence to analyze skin photos and provide insights based on the data you provide.
+      </p>
+
+      <h3>2. Medical Disclaimer</h3>
+      <div class="callout">
+        <p>
+          <strong>BeautyLook is not a medical service or healthcare provider.</strong> The skin analysis 
+          and recommendations generated by the App are for informational and educational purposes only. 
+          The AI analysis is not a medical diagnosis. <strong>It is not intended to diagnose, treat, cure, or prevent 
+          any skin conditions, including skin cancer.</strong> Always consult a qualified dermatologist or 
+          healthcare professional for medical concerns. Never disregard professional medical advice because of something you read on this App.
+        </p>
+      </div>
+
+      <h3>3. Eligibility</h3>
+      <p>
+        You must be at least 16 years of age to use the App. By using BeautyLook, you
+        represent and warrant that you meet this age requirement.
+      </p>
+
+      <h3>4. Account & Security</h3>
+      <p>
+        You are responsible for maintaining the confidentiality of your account
+        credentials. You agree to notify us immediately of any unauthorised use
+        of your account. We are not liable for any loss arising from
+        unauthorised access to your account.
+      </p>
+
+      <h3>5. Payments & Subscriptions</h3>
+      <p>
+        Certain features of the App may require a "Pro Subscription" or one-time purchase.
+      </p>
+      <ul>
+        <li><strong>In-App Purchases:</strong> All financial transactions are processed securely through the Apple App Store. Payment will be charged to your Apple ID account at the confirmation of purchase.</li>
+        <li><strong>Auto-Renewal:</strong> Subscriptions automatically renew unless auto-renew is turned off at least 24 hours before the end of the current period.</li>
+        <li><strong>Management:</strong> You can manage or cancel your subscriptions at any time by going to your Account Settings on the App Store after purchase.</li>
+        <li><strong>Refunds:</strong> All purchases are final. Refund requests must be directed to Apple Support as payments are handled by the App Store.</li>
+      </ul>
+
+      <h3>6. AI-Generated Content & Photos</h3>
+      <p>
+        Skin assessments are generated by artificial intelligence. While we strive for accuracy, 
+        AI can make mistakes. The quality of analysis depends on the quality of the photos provided. 
+        BeautyLook does not guarantee the accuracy or medical validity of any AI-generated content.
+      </p>
+
+      <h3>7. Acceptable Use</h3>
+      <p>You agree not to:</p>
+      <ul>
+        <li>Use the App for any unlawful purpose.</li>
+        <li>Attempt to reverse-engineer the App's AI logic.</li>
+        <li>Submit photos of other people without their explicit consent.</li>
+        <li>Upload inappropriate or non-skincare related images.</li>
+      </ul>
+
+      <h3>8. Intellectual Property</h3>
+      <p>
+        All content, trademarks, and intellectual property in the App are owned
+        by BeautyLook. You may not reproduce or distribute content from the App without prior written consent.
+      </p>
+
+      <h3>9. Termination</h3>
+      <p>
+        We reserve the right to suspend or terminate your account at our
+        discretion if you violate these Terms. You may delete your account at
+        any time from the App's Settings screen.
+      </p>
+
+      <h3>10. Limitation of Liability</h3>
+      <p>
+        To the fullest extent permitted by law, BeautyLook shall not be liable for
+        any damages arising from your use of the App or reliance on its AI assessments.
+      </p>
+    </section>
+
+    <!-- PRIVACY POLICY -->
+    <section class="section" id="privacy">
+      <span class="section-label">Legal</span>
+      <h2>Privacy Policy</h2>
+      <p class="effective-date">Effective Date: May 16, 2026</p>
+
+      <p>
+        Your privacy—and the security of your photos—is our top priority. This Privacy Policy explains what
+        information BeautyLook collects, how we use it, and how we protect it.
+      </p>
+
+      <h3>1. Information We Collect</h3>
+      <p>When you use BeautyLook, we collect:</p>
+      <ul>
+        <li><strong>Account Information:</strong> Email address (managed securely via Supabase Authentication).</li>
+        <li><strong>Skin Profile:</strong> Skin type, concerns, and sensitivity levels.</li>
+        <li><strong>Assessment Photos:</strong> Facial photos you upload for AI analysis. These are processed securely and used only for your skin reports.</li>
+        <li><strong>Assessment Data:</strong> AI-generated insights regarding acne, texture, hydration, and other skin metrics.</li>
+        <li><strong>Usage Data:</strong> How you interact with the App to help us improve the AI models.</li>
+      </ul>
+
+      <h3>2. How We Use Your Information</h3>
+      <p>We use your data to:</p>
+      <ul>
+        <li>Generate personalized AI skin reports and progress tracking.</li>
+        <li>Recommend skincare products tailored to your skin type.</li>
+        <li>Improve the accuracy of our skincare AI models.</li>
+        <li>Respond to support requests.</li>
+      </ul>
+
+      <h3>3. AI Data Processing & Third-Party Sharing</h3>
+      <p>
+        To provide skin analysis, BeautyLook utilizes secure third-party AI services, including <strong>Groq (Llama models)</strong> and specialized image processing tools.
+      </p>
+      <p>
+        <strong>What data is sent:</strong> We transmit your skin assessment photos and basic profile data (concerns, skin type) to our AI partners for real-time analysis. We <strong>do not</strong> share your name or email address with these AI providers.
+      </p>
+      <p>
+        <strong>Security:</strong> Photos are transmitted via encrypted connections. Our partners are prohibited from using your photos to train their public models or for any purpose outside of your specific assessment.
+      </p>
+
+      <h3>4. Data Storage & Photo Security</h3>
+      <p>
+        Your data and photos are stored securely using <strong>Supabase</strong> with high-grade encryption. Facial photos are treated as sensitive biometric data and are protected by Row-Level Security (RLS) so that only you can access them.
+      </p>
+
+      <h3>5. Data Sharing</h3>
+      <p>We do <strong>not</strong> sell your personal data or facial photos to third parties. We share data only:</p>
+      <ul>
+        <li>With AI partners solely for processing your skin assessments.</li>
+        <li>With Apple for secure payment processing.</li>
+        <li>When required by law or legal process.</li>
+      </ul>
+
+      <h3>6. Data Retention & Deletion</h3>
+      <p>
+        We retain your data as long as your account is active to show your skin progress over time. If you delete
+        your account, all associated data and facial photos are permanently purged from our servers.
+      </p>
+
+      <h3>7. Your Rights</h3>
+      <p>You have the right to:</p>
+      <ul>
+        <li>Access and export your skin data.</li>
+        <li>Delete your account and all associated photos.</li>
+        <li>Withdraw consent for AI processing.</li>
+      </ul>
+
+      <h3>8. Children's Privacy</h3>
+      <p>
+        BeautyLook is not intended for children under 16 years of age. We do not
+        knowingly collect personal data from children.
+      </p>
+
+      <h3>9. Contact Us</h3>
+      <p>
+        If you have questions about your data, please contact us at 
+        <a href="mailto:plaxperthosting@gmail.com"
+          style="color: var(--brand); font-weight: 600;">plaxperthosting@gmail.com</a>.
+      </p>
+    </section>
+
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2026 <span>BeautyLook</span>. All rights reserved.</p>
+  </footer>
+
+  <script>
+    /**
+     * Smart Redirect Logic
+     */
+    window.addEventListener('load', () => {
+      const isAuthFlow = window.location.hash.includes('access_token') ||
+        window.location.search.includes('type=signup') ||
+        window.location.search.includes('type=recovery');
+
+      if (isAuthFlow) {
+        document.getElementById('welcome').style.display = 'block';
+        document.getElementById('support').style.display = 'none';
+        document.getElementById('terms').style.display = 'none';
+        document.getElementById('privacy').style.display = 'none';
+        document.getElementById('main-nav').style.display = 'none';
+        document.getElementById('main-hero').style.display = 'none';
+
+        const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+        if (isMobile) {
+          setTimeout(() => {
+            window.location.href = "beautylook://";
+          }, 1500);
+        }
+      }
+    });
+  </script>
+</body>
+
+</html>
