@@ -103,7 +103,8 @@
     }
 
     .hero-logo {
-      height: 200px;
+      width: 120px;
+      height: 120px;
       margin-bottom: 24px;
       border-radius: 24px;
       box-shadow: 0 8px 24px rgba(160, 106, 146, 0.2);
@@ -296,7 +297,7 @@
   <!-- Navigation -->
   <nav class="nav" id="main-nav">
     <div class="nav-inner">
-      <a href="#" class="nav-logo">The Beauty Look</a>
+      <a href="#" class="nav-logo">BeautyLook</a>
       <div class="nav-links">
         <a href="#support">Support</a>
         <a href="#terms">Terms</a>
@@ -308,7 +309,7 @@
   <!-- Hero -->
   <header class="hero" id="main-hero">
     <img src="logo.png" alt="BeautyLook Logo" class="hero-logo">
-    <h1>The Beauty Look</h1>
+    <h1>BeautyLook</h1>
     <p class="tagline">Your AI Skincare Expert</p>
   </header>
 
@@ -318,7 +319,7 @@
     <section class="section" id="welcome" style="display: none;">
       <div class="success-icon">✨</div>
       <span class="section-label">Verification Successful</span>
-      <h2>Welcome to TheBeautyLook</h2>
+      <h2>Welcome to BeautyLook</h2>
       <p style="margin-bottom: 12px;">Your email has been verified. You're now ready to start your personalized skincare journey.</p>
 
       <a href="beautylook://" class="support-btn">
@@ -359,7 +360,7 @@
       <p class="effective-date">Effective Date: May 16, 2026</p>
 
       <p>
-        Welcome to TheBeautyLook. By downloading, accessing, or using the BeautyLook mobile
+        Welcome to BeautyLook. By downloading, accessing, or using the BeautyLook mobile
         application ("App"), you agree to be bound by these Terms of Use
         ("Terms"). If you do not agree, please do not use the App.
       </p>
@@ -475,13 +476,16 @@
 
       <h3>3. AI Data Processing & Third-Party Sharing</h3>
       <p>
-        To provide skin analysis, BeautyLook utilizes secure third-party AI services, including <strong>Groq (Llama models)</strong> and specialized image processing tools.
+        To provide skin analysis, BeautyLook sends your assessment data to <strong>Google</strong>, which acts as our third-party AI processing partner, for real-time image and text analysis. This is used for this feature only.
       </p>
       <p>
-        <strong>What data is sent:</strong> We transmit your skin assessment photos and basic profile data (concerns, skin type) to our AI partners for real-time analysis. We <strong>do not</strong> share your name or email address with these AI providers.
+        <strong>What data is sent:</strong> When you tap "Start" to run a skin analysis, we transmit (1) the facial assessment photos you uploaded for that assessment (front, side profiles, forehead and cheek close-ups), (2) your questionnaire answers (e.g. age, gender, climate, skin behavior), and (3) your selected skin goals and any progress feedback you typed for follow-up assessments. We <strong>do not</strong> send your name, email address, or account credentials to Google as part of this request.
       </p>
       <p>
-        <strong>Security:</strong> Photos are transmitted via encrypted connections. Our partners are prohibited from using your photos to train their public models or for any purpose outside of your specific assessment.
+        <strong>Your permission:</strong> Before any assessment is sent for analysis, the App shows an explicit confirmation screen naming Google as the AI provider and requires you to actively acknowledge it before the request is sent. You may decline at that point and no data will be transmitted.
+      </p>
+      <p>
+        <strong>Security:</strong> Data is transmitted via encrypted (HTTPS) connections. Per Google's API terms for this service, submitted content is not used to train Google's general-purpose public models and is retained by Google only as needed to provide and debug the service.
       </p>
 
       <h3>4. Data Storage & Photo Security</h3>
